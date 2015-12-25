@@ -51,3 +51,9 @@ class TimeSheets(models.Model):
 
         class Meta:
             unique_together = (("user_id", "work_date", "chunk_id"),)
+
+class Settings(models.Model):
+        user_info = models.CharField(max_length=15)
+        created = models.DateTimeField(default=datetime.now, blank=False)
+        updated = models.DateTimeField(auto_now=True, blank=True)
+
